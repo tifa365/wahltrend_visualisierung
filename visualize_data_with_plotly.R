@@ -1,7 +1,7 @@
 library(plotly)
 library(htmlwidgets)
 
-#source('main.R')
+source('main.R')
 
 # create plot with custom colors
 fig <- plot_ly(data = df_trend, 
