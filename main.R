@@ -1,4 +1,9 @@
-needs(dplyr, readr, stringr, tidyr, rvest, lubridate, xml2, numform, purrr)
+# Check which packages are already installed and download if necessary
+list.of.packages <- c("dplyr", "readr", "stringr", "tidyr", "rvest", "lubridate", "xml2", "numform", "purrr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+lapply(list.of.packages, require, character.only = TRUE)
 
 # Scrape Polling data from Wahlrecht.de
 # returns a single dataframe: df_polls
